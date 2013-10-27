@@ -1,0 +1,15 @@
+{
+  "name": "recrecords",
+  "version": "0.0.0",
+  "main": "js/main.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.0"
+  }
+}
