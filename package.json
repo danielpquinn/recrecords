@@ -24,7 +24,8 @@
     "ejs": "~0.8.4",
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
-    "bcrypt": "~0.7.7"
+    "bcrypt": "~0.7.7",
+    "express-validator": "~0.8.0"
   },
   "devDependencies": {}
 }

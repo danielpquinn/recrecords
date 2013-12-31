@@ -1,4 +1,5 @@
 var express = require('express'),
+  expressValidator = require('express-validator'),
   app = express(),
   db = require('./config/dbschema'),
   pass = require('./config/pass'),
@@ -12,6 +13,7 @@ app.configure(function () {
   app.set('view engine', 'ejs');
   app.use(express.logger('dev'));
   app.use(express.cookieParser());
+  app.use(expressValidator());
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.session({ secret: 'rec records ;)' }));
@@ -26,9 +28,8 @@ app.configure(function () {
 app.get('/', basicRoutes.index);
 
 // User pages
-app.get('/account', pass.ensureAuthenticated, userRoutes.account);
-app.get('/login', userRoutes.getLogin);
-app.get('/register', userRoutes.getRegister);
+app.get('/user', userRoutes.getUser);
+app.get('/users', userRoutes.getUsers);
 app.post('/login', userRoutes.postLogin);
 app.post('/register', userRoutes.postRegister);
 app.get('/logout', userRoutes.logout);
