@@ -1,0 +1,24 @@
+{
+  "name": "recrecords",
+  "version": "0.0.0",
+  "homepage": "https://github.com/danielpquinn/recrecords",
+  "authors": [
+    "Dan Quinn <danthemilk@gmail.com>"
+  ],
+  "description": "Chronic Sinus Infection Land",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "angular": "~1.2.7",
+    "angular-route": "~1.2.7",
+    "soundmanager": "*",
+    "angular-animate": "~1.2.7"
+  }
+}

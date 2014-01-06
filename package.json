@@ -1,0 +1,32 @@
+{
+  "name": "recrecords",
+  "version": "0.0.0",
+  "description": "Chronic Sinus Infection Land",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/danielpquinn/recrecords.git"
+  },
+  "keywords": [
+    "Music",
+    "Recreation",
+    "Records",
+    "Recrational",
+    "Records",
+    "Blog"
+  ],
+  "author": "Dan Quinn",
+  "license": "BSD",
+  "gitHead": "4577d1a95e67e8d270dc70823b3082fdd97a7861",
+  "bugs": {
+    "url": "https://github.com/danielpquinn/recrecords/issues"
+  },
+  "dependencies": {
+    "keystone": "~0.1.55",
+    "underscore": "~1.5.2",
+    "ejs": "~0.8.5"
+  }
+}

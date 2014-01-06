@@ -9,4 +9,9 @@ Icon
 
 # Node Packages
 node_modules
-public/components
+
+# Bower Components
+public/bower_components
+
+# Music and images
+public/releases

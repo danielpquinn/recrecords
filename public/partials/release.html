@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{title}}</h1>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <figure>
+        <img class="thumbnail" ng-src="{{image}}" alt="{{title}}">
+        <figcaption>{{title}}</figcaption>
+      </figure>
+    </div>
+    <div class="col-md-8">
+      <p><strong>Artist:</strong> {{artist.name}}</p>
+      <p><strong>Release date:</strong> {{publishedDate | date:'longDate' }}</p>
+      <div ng-bind-html="description"></div>
+      <div player></div>
+    </div>
+  </div>
+</div>
