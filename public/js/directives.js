@@ -7,6 +7,11 @@ angular.module('recrecords.directives', [])
       templateUrl: '/partials/player.html',
       link: function (scope, element, attrs) {
 
+        scope.$on('$destroy', function () {
+          soundManager.stopAll();
+          scope.sound = null;
+        });
+
         scope.$watch('tracks', function (val) {
 
           if (scope.tracks) {

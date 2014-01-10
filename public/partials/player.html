@@ -10,7 +10,7 @@
   <div class="panel-body">
     <table class="table table-condensed table-hover">
       <tr ng-repeat="track in tracks" ng-class="{active: $index==selectedTrack}" ng-click="play($index)">
-        <td class="text-right">{{$index}}</td><td>{{track.title}}</td>
+        <td width="35" class="text-right text-muted">{{$index + 1}}</td><td>{{track.title}}</td>
       </tr>
     </table>
   </div>
