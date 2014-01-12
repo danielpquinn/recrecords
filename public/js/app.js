@@ -12,10 +12,10 @@ angular.element(document).ready(function () {
   ])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
-    $routeProvider.when('/home', {templateUrl: '/partials/home.html', controller: 'home'});
+    $routeProvider.when('/releases/page/:page', {templateUrl: '/partials/releases.html', controller: 'releases'});
     $routeProvider.when('/artist/:slug', {templateUrl: '/partials/artist.html', controller: 'artist'});
     $routeProvider.when('/release/:slug', {templateUrl: '/partials/release.html', controller: 'release'});
-    $routeProvider.otherwise({redirectTo: '/home'});
+    $routeProvider.otherwise({redirectTo: '/releases/page/1'});
   }]);
 
   angular.bootstrap(document, ['recrecords']);

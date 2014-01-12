@@ -1,16 +1,17 @@
-<div class="container">
+<div header></div>
+<div class="container main">
   <div class="row">
     <div class="col-md-4">
       <figure>
-        <img class="thumbnail" ng-src="{{image}}" alt="{{title}}">
+        <img class="thumbnail" ng-src="{{data.image}}" alt="{{data.title}}">
       </figure>
     </div>
     <div class="col-md-8">
-      <h2>{{title}}</h2>
-      <p><strong>Artist:</strong> {{artist.name}}</p>
-      <p><strong>Release date:</strong> {{publishedDate | date:'longDate' }}</p>
+      <h2 class="release-title">{{data.title}}</h2>
+      <p><strong>Artist:</strong> {{data.artist.name}}</p>
+      <p><strong>Release date:</strong> {{data.publishedDate | date:'longDate' }}</p>
       <hr>
-      <div ng-bind-html="description"></div>
+      <div ng-bind-html="data.description"></div>
       <hr>
       <div player></div>
     </div>
