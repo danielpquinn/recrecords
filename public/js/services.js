@@ -4,7 +4,7 @@ angular.module('recrecords.services', [])
   .factory('api', function ($http) {
     return {
       async: function (endpoint) {
-        return $http.get('/api/' + endpoint).then(function (response) {
+        return $http({ method: 'GET', url: '/api/' + endpoint, cache: true }).then(function (response) {
           return response.data;
         });
       }
