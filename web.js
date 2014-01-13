@@ -1,9 +1,10 @@
-var keystone = require('keystone');
+var keystone = require('keystone'),
+  path = require('path');
 
 keystone.init({
   'name': 'Recreational Records',
   'favicon': 'public/favicon.ico',
-  'less': 'public',
+  'less': path.join(__dirname, 'public'),
   'static': 'public',
   'views': 'templates/views',
   'view engine': 'ejs',
