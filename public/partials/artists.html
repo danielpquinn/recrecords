@@ -1,0 +1,8 @@
+<div ng-controller="artists">
+  <h4>Artists</h4>
+  <ul>
+    <li ng-repeat="artist in artists.artists">
+      <a href="/artists/{{artist.name}}">{{artist.name}}</a>
+    </li>
+  </ul>
+</div>

@@ -1,19 +1,16 @@
 'use strict';
 
 angular.module('recrecords.controllers', ['recrecords.services'])
-  .controller('releases', ['api', '$scope', '$routeParams', function (api, $scope, $routeParams) {
-    api.async('releases/' + $routeParams.page).then(function (data) {
-      data.pages = [];
-      for (var i = 0; i < data.totalPages; i += 1) { data.pages.push(i); }
-      $scope.data = data;
-    });
-  }])
-  .controller('artist', ['api', '$routeParams', '$scope', function (api, $routeParams, $scope) {
-    api.async('artist/' + $routeParams.slug ).then(function (data) { $scope.artist = data; });
-  }])
-  .controller('release', ['api', '$sce', '$routeParams', '$scope', function (api, $sce, $routeParams, $scope) {
-    api.async('release/' + $routeParams.slug ).then(function (data) {
-      $scope.data = data;
-      $scope.data.description = $sce.trustAsHtml(data.description);
-    });
-  }]);
+  .controller('releases', function ($scope, releases, artists) {
+    releases.pages = [];
+    for (var i = 0; i < releases.totalPages; i += 1) { releases.pages.push(i); }
+    $scope.releases = releases;
+    $scope.artists = artists;
+  })
+  .controller('release', function ($sce, $scope, data) {
+    $scope.data = data;
+    $scope.data.description = $sce.trustAsHtml(data.description);
+  })
+  .controller('artists', function ($scope, artists) {
+    $scope.artists = artists;
+  });

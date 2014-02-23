@@ -1,12 +1,12 @@
 .main {
   margin-top: 100px;
 }
+.album-art {
+  display: block;
+  height: 252px;
+}
 .release-title {
   margin-top: 0;
-}
-.img-thumbnail-release {
-  width: 165px;
-  height: 165px;
 }
 .player .position {
   margin: 0;
@@ -17,4 +17,7 @@
 .player .progress {
   height: 5px;
   margin-bottom: 0;
+}
+.player .track {
+  cursor: pointer;
 }

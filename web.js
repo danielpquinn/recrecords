@@ -8,7 +8,7 @@ keystone.init({
   'views': 'templates/views',
   'view engine': 'ejs',
   'auto update': true,
-  'mongo': 'mongodb://localhost/recrecords',
+  'mongo': 'mongodb://192.168.1.110:27017/recrecords',
   'session': true,
   'auth': true,
   'user model': 'User',

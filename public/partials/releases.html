@@ -1,27 +1,27 @@
 <div header></div>
 <div class="container main">
-  <p>Recreational Records is a magical land where mp3 files fall out of the sky like cool rain. Boys and girls put on their bootz and splash thru puddles of mp3 files. Mp3 files get all over everybody's faces so that when the children are kissing they are spreading the magic. The magic is real. The magic is Recreational.</p>
   <div class="row">
-    <div class="col-md-12">
-      <h2>Releases</h2>
-      <hr>
-    </div>
-  </div>
-  <div ng-repeat="release in data.releases">
-    <div class="row">
-      <div class="col-md-2">
-        <a href="/release/{{release.slug}}"><img class="img-thumbnail img-thumbnail-release" ng-src="{{release.image}}"/></a>
-      </div>
-      <div class="col-md-10">
+    <div class="col-md-9">
+      <div class="col-sm-4" ng-repeat="release in releases.releases">
+        <a class="album-art" href="/release/{{release.slug}}"><img class="img-thumbnail img-thumbnail-release" ng-src="{{release.image}}"/></a>
         <p>{{release.artist.name}}</p>
         <h4><a href="/release/{{release.slug}}">{{release.title}}</a></h4>
       </div>
+      <ul class="pagination">
+        <li ng-class="{disabled: releases.currentPage == 1}"><a href="/releases/page/{{releases.currentPage - 1}}">&laquo;</a></li>
+        <li ng-repeat="page in releases.pages" ng-class="{active: $index + 1 == releases.currentPage}"><a href="/releases/page/{{$index + 1}}">{{$index + 1}}</a></li>
+        <li ng-show="releases.currentPage < releases.totalPages"><a href="/releases/page/{{releases.currentPage + 1}}">&raquo;</a></li>
+      </ul>
     </div>
-    <hr>
+    <div class="col-md-3">
+      <div class="col-sm-12">
+          <h4>Artists</h4>
+          <ul>
+            <li ng-repeat="artist in artists">
+              <a href="/artists/{{artist.name}}">{{artist.name}}</a>
+            </li>
+          </ul>
+      </div>
+    </div>
   </div>
-  <ul class="pagination">
-    <li ng-show="data.currentPage > 1"><a href="/releases/page/{{data.currentPage - 1}}">&laquo;</a></li>
-    <li ng-repeat="page in data.pages" ng-class="{active: $index + 1 == data.currentPage}"><a href="/releases/page/{{$index + 1}}">{{$index + 1}}</a></li>
-    <li ng-show="data.currentPage < data.totalPages"><a href="/releases/page/{{data.currentPage + 1}}">&raquo;</a></li>
-  </ul>
 </div>
