@@ -1,8 +1,8 @@
-<div ng-controller="artists">
+<div class="module">
   <h4>Artists</h4>
-  <ul>
-    <li ng-repeat="artist in artists.artists">
-      <a href="/artists/{{artist.name}}">{{artist.name}}</a>
+  <ul class="list-unstyled">
+    <li ng-repeat="artist in artists">
+      <a href="/artist/{{artist.slug}}/releases/page/1">{{artist.name}}</a>
     </li>
   </ul>
 </div>

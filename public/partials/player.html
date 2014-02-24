@@ -1,7 +1,7 @@
 <div class="panel panel-default player">
   <div class="panel-heading">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <div class="btn-group">
           <button type="button" class="btn btn-default" ng-click="previous()"><span class="glyphicon glyphicon-backward"></span></button>
           <button type="button" class="btn btn-default" ng-click="pause()" ng-show="playing"><span class="glyphicon glyphicon-pause"></span></button>
@@ -9,7 +9,7 @@
           <button type="button" class="btn btn-default" ng-click="next()"><span class="glyphicon glyphicon-forward"></span></button>
         </div>
       </div>
-      <div class="col-sm-9">
+      <div class="col-sm-8">
         <p class="position">{{position | date:'mm:ss'}} / {{duration | date:'mm:ss'}}</p>
         <div class="progress">
           <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%">
@@ -21,7 +21,7 @@
   </div>
   <div class="panel-body">
     <table class="table table-condensed table-hover">
-      <tr ng-repeat="track in data.tracks" class="track" ng-class="{active: $index==selectedTrack}" ng-click="play($index)">
+      <tr ng-repeat="track in tracks" class="track" ng-class="{active: $index==selectedTrack}" ng-click="play($index)">
         <td width="35" class="text-right text-muted">{{$index + 1}}</td><td>{{track.title}}</td>
       </tr>
     </table>

@@ -1,19 +1,45 @@
 <div header></div>
 <div class="container main">
   <div class="row">
-    <div class="col-md-4">
-      <figure>
-        <img class="thumbnail" ng-src="{{data.image}}" alt="{{data.title}}">
-      </figure>
+    <div class="col-md-9">
+      <div class="module">
+        <div class="row">
+          <div class="col-sm-5">
+            <figure>
+              <img ng-src="{{release.image}}" alt="{{release.title}}">
+            </figure>
+          </div>
+          <div class="col-sm-7">
+            <h2 class="release-title">{{release.title}}</h2>
+            <p><strong>Artist:</strong> {{release.artist.name}}</p>
+            <p><strong>Release date:</strong> {{release.publishedDate | date:'longDate' }}</p>
+            <hr>
+            <div ng-bind-html="release.description"></div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <div player tracks="release.tracks"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-8">
-      <h2 class="release-title">{{data.title}}</h2>
-      <p><strong>Artist:</strong> {{data.artist.name}}</p>
-      <p><strong>Release date:</strong> {{data.publishedDate | date:'longDate' }}</p>
-      <hr>
-      <div ng-bind-html="data.description"></div>
-      <hr>
-      <div player></div>
+    <div class="col-md-3">
+      <div ng-include="'/partials/artists.html'"></div>
+    </div>
+  </div>
+  <div class="row" ng-show="otherReleases.length > 0">
+    <div class="col-md-12">
+      <h3>Other releases by {{release.artist.name}}</h3>
+    </div>
+  </div>
+  <div class="row" ng-show="otherReleases.length > 0">
+    <div ng-repeat="release in otherReleases" class="col-md-4 other-releases-release">
+      <a href="/release/{{release.slug}}" class="release module">
+        <img ng-src="{{release.image}}"/>
+        <h4>{{release.title}}</h4>
+      </a>
     </div>
   </div>
 </div>

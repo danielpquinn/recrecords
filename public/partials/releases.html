@@ -2,26 +2,27 @@
 <div class="container main">
   <div class="row">
     <div class="col-md-9">
-      <div class="col-sm-4" ng-repeat="release in releases.releases">
-        <a class="album-art" href="/release/{{release.slug}}"><img class="img-thumbnail img-thumbnail-release" ng-src="{{release.image}}"/></a>
-        <p>{{release.artist.name}}</p>
-        <h4><a href="/release/{{release.slug}}">{{release.title}}</a></h4>
+      <div class="row">
+        <div class="col-sm-4 col-release" ng-repeat="release in releases.releases">
+          <div class="release module">
+            <a class="album-art" href="/release/{{release.slug}}"><img ng-src="{{release.image}}"/></a>
+            <p>{{release.artist.name}}</p>
+            <h4><a href="/release/{{release.slug}}">{{release.title}}</a></h4>
+          </div>
+        </div>
       </div>
-      <ul class="pagination">
-        <li ng-class="{disabled: releases.currentPage == 1}"><a href="/releases/page/{{releases.currentPage - 1}}">&laquo;</a></li>
-        <li ng-repeat="page in releases.pages" ng-class="{active: $index + 1 == releases.currentPage}"><a href="/releases/page/{{$index + 1}}">{{$index + 1}}</a></li>
-        <li ng-show="releases.currentPage < releases.totalPages"><a href="/releases/page/{{releases.currentPage + 1}}">&raquo;</a></li>
-      </ul>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="pagination">
+            <li ng-class="{disabled: releases.currentPage === 1}"><a href="{{route}}/page/{{releases.currentPage - 1}}">&laquo;</a></li>
+            <li ng-repeat="page in releases.pages" ng-class="{active: $index + 1 == releases.currentPage}"><a href="{{route}}/page/{{$index + 1}}">{{$index + 1}}</a></li>
+            <li ng-class="{disabled: releases.currentPage < releases.totalPages}"><a href="{{route}}/page/{{releases.currentPage + 1}}">&raquo;</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="col-md-3">
-      <div class="col-sm-12">
-          <h4>Artists</h4>
-          <ul>
-            <li ng-repeat="artist in artists">
-              <a href="/artists/{{artist.name}}">{{artist.name}}</a>
-            </li>
-          </ul>
-      </div>
+      <div ng-include="'/partials/artists.html'"></div>
     </div>
   </div>
 </div>

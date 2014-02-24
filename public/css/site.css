@@ -1,11 +1,40 @@
+body {
+  background-color: #eeeeee;
+}
+a {
+  color: #00cf1c;
+}
+a:hover,
+a:active {
+  color: #00cf1c;
+}
+.global-header.navbar-inverse {
+  background-color: #36ff51;
+  border-bottom: 1px solid #00e81f;
+}
+.global-header.navbar-inverse a.navbar-brand {
+  color: #008312;
+}
 .main {
   margin-top: 100px;
 }
-.album-art {
+.module {
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid #e1e1e1;
+}
+.release {
+  margin-bottom: 30px;
+}
+.release .album-art {
   display: block;
   height: 252px;
 }
-.release-title {
+.release .album-art img {
+  width: 100%;
+  height: 232px;
+}
+.release .release-title {
   margin-top: 0;
 }
 .player .position {
@@ -20,4 +49,25 @@
 }
 .player .track {
   cursor: pointer;
+}
+.other-releases-release .release {
+  display: block;
+  overflow: hidden;
+}
+.other-releases-release .release img {
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+}
+.pagination > .active a,
+.pagination > .active span {
+  background-color: #00cf1c;
+  border: 1px solid #00cf1c;
+}
+.pagination > .active a:hover,
+.pagination > .active span:hover,
+.pagination > .active a:active,
+.pagination > .active span:active {
+  background-color: #00cf1c;
+  border: 1px solid #00cf1c;
 }

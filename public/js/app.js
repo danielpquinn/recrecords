@@ -24,7 +24,21 @@ angular.element(document).ready(function () {
     $routeProvider.when('/release/:slug', {
       templateUrl: '/partials/release.html',
       controller: 'release',
-      resolve: { data: function ($route, api) { return api.async('release/' + $route.current.params.slug); } }
+      resolve: {
+        release: function ($route, api) { return api.async('release/' + $route.current.params.slug); },
+        artists: function (api) { return api.async('artists'); },
+        otherReleases: function ($route, api) { return api.async('release/' + $route.current.params.slug).then(function (result) {
+          return api.async('artist/' + result.artist.slug + '/releases');
+        })}
+      }
+    });
+    $routeProvider.when('/artist/:slug/releases/page/:page', {
+      templateUrl: '/partials/releases.html',
+      controller: 'releases',
+      resolve: {
+        releases: function ($route, api) { return api.async('artist/' + $route.current.params.slug + '/releases'); },
+        artists: function (api) { return api.async('artists'); }
+      }
     });
     $routeProvider.otherwise({ redirectTo: '/releases/page/1' });
   }]);

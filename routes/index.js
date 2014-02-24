@@ -30,10 +30,11 @@ var routes = {
 
 // Bind routes
 exports = module.exports = function (app) {
-  app.get('/api/tracks', routes.api.tracks);
-  app.get('/api/artist/:slug', routes.api.artist);
-  app.get('/api/artists', routes.api.artists);
-  app.get('/api/release/:slug', routes.api.release);
-  app.get('/api/releases/:page?*', routes.api.releases);
+  app.get('/api/tracks', routes.api['tracks']);
+  app.get('/api/artist/:slug', routes.api['artist']);
+  app.get('/api/artist/:slug/releases/:page?*', routes.api['artist-releases']);
+  app.get('/api/artists', routes.api['artists']);
+  app.get('/api/release/:slug', routes.api['release']);
+  app.get('/api/releases/:page?*', routes.api['releases']);
   app.get('/*', routes.views.index);
 }
