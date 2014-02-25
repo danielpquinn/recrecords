@@ -20,7 +20,6 @@ angular.element(document).ready(function () {
         artists: function (api) { return api.async('artists'); }
       }
     });
-    $routeProvider.when('/artist/:slug', {templateUrl: '/partials/artist.html', controller: 'artist'});
     $routeProvider.when('/release/:slug', {
       templateUrl: '/partials/release.html',
       controller: 'release',
@@ -34,9 +33,9 @@ angular.element(document).ready(function () {
     });
     $routeProvider.when('/artist/:slug/releases/page/:page', {
       templateUrl: '/partials/releases.html',
-      controller: 'releases',
+      controller: 'artistReleases',
       resolve: {
-        releases: function ($route, api) { return api.async('artist/' + $route.current.params.slug + '/releases'); },
+        releases: function ($route, api) { return api.async('artist/' + $route.current.params.slug + '/releases/' + $route.current.params.page); },
         artists: function (api) { return api.async('artists'); }
       }
     });

@@ -47,6 +47,9 @@ a:active {
   height: 5px;
   margin-bottom: 0;
 }
+.player .progress .progress-bar {
+  background-color: #36ff51;
+}
 .player .track {
   cursor: pointer;
 }
