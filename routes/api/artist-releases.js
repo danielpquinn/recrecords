@@ -2,7 +2,7 @@ var keystone = require('keystone');
 
 exports = module.exports = function (req, res) {
   var page = parseInt(req.params.page) || 1,
-    perPage = 1;
+    perPage = 9;
   
   var Artist = keystone.list('Artist');
 
