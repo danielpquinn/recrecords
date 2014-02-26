@@ -11,12 +11,12 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row" ng-show="releases.totalPages > 1">
         <div class="col-md-12">
           <ul class="pagination">
-            <li ng-class="{disabled: releases.currentPage === 1}"><a href="{{route}}/page/{{releases.currentPage - 1}}">&laquo;</a></li>
+            <li ng-show="releases.currentPage > 1"><a href="{{route}}/page/{{releases.currentPage - 1}}">&laquo;</a></li>
             <li ng-repeat="page in releases.pages" ng-class="{active: $index + 1 == releases.currentPage}"><a href="{{route}}/page/{{$index + 1}}">{{$index + 1}}</a></li>
-            <li ng-class="{disabled: releases.currentPage < releases.totalPages}"><a href="{{route}}/page/{{releases.currentPage + 1}}">&raquo;</a></li>
+            <li ng-show="releases.currentPage < releases.totalPages"><a href="{{route}}/page/{{releases.currentPage + 1}}">&raquo;</a></li>
           </ul>
         </div>
       </div>
