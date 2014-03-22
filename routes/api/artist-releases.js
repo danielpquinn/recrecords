@@ -3,7 +3,7 @@ var keystone = require('keystone');
 exports = module.exports = function (req, res) {
   var page = parseInt(req.params.page) || 1,
     perPage = 9;
-  
+
   var Artist = keystone.list('Artist');
 
   Artist.model.findOne({slug: req.params.slug})
@@ -12,7 +12,7 @@ exports = module.exports = function (req, res) {
           .find({artist: result._id})
           .skip((page - 1) * perPage)
           .limit(perPage)
-          .populate('artist')
+          .populate('artist genres')
           .sort('-publishedDate')
           .exec(function (err, results) {
             keystone.list('Release').model.find({artist: result._id})

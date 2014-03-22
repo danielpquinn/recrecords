@@ -19,22 +19,22 @@ a:active {
   margin-top: 100px;
 }
 .module {
-  padding: 10px;
+  padding: 15px;
   background-color: white;
   border-bottom: 1px solid #e1e1e1;
 }
-.release {
+.release-thumbnail {
   margin-bottom: 30px;
 }
-.release .album-art {
+.release-thumbnail .artwork {
   display: block;
   height: 252px;
 }
-.release .album-art img {
+.release-thumbnail .artwork img {
   width: 100%;
   height: 232px;
 }
-.release .release-title {
+.release-thumbnail .release-title {
   margin-top: 0;
 }
 .player .position {

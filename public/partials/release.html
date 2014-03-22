@@ -3,17 +3,16 @@
   <div class="row">
     <div class="col-md-9">
       <div class="module">
-        <div class="row">
-          <div class="col-sm-5">
+        <div class="row release">
+          <div class="col-md-5">
             <figure>
-              <img ng-src="{{release.image}}" alt="{{release.title}}">
+              <img class="artwork" ng-src="{{release.image}}" alt="{{release.title}}">
             </figure>
           </div>
-          <div class="col-sm-7">
+          <div class="col-md-7 details">
             <h2 class="release-title">{{release.title}}</h2>
-            <p><strong>Artist:</strong> {{release.artist.name}}</p>
-            <p><strong>Release date:</strong> {{release.publishedDate | date:'longDate' }}</p>
-            <hr>
+            <p><strong>{{release.artist.name}}</strong> <span class="text-muted">/</span>  {{release.publishedDate | date:'longDate' }}</p>
+            <p><span ng-repeat="genre in release.genres"><label class="label label-default">{{genre.name}}</label> </span></p>
             <div ng-bind-html="release.description"></div>
           </div>
         </div>
