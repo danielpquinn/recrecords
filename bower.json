@@ -21,7 +21,6 @@
     "soundmanager": "*",
     "angular-animate": "~1.2.7",
     "bootstrap": "~3.0.3",
-    "angular-ui-router": "~0.2.8",
     "underscore": "~1.6.0"
   }
 }

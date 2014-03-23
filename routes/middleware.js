@@ -8,11 +8,8 @@ var _ = require('underscore'),
 exports.initLocals = function (req, res, next) {
 
   var locals = res.locals;
-
   locals.user = req.user;
-
-  // Add local vars here
-  
+  locals.env = process.env.NODE_ENV;
   next();
 
 };
