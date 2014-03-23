@@ -28,11 +28,9 @@ a:active {
 }
 .release-thumbnail .artwork {
   display: block;
-  height: 252px;
 }
 .release-thumbnail .artwork img {
   width: 100%;
-  height: 232px;
 }
 .release-thumbnail .release-title {
   margin-top: 0;
@@ -73,4 +71,8 @@ a:active {
 .pagination > .active span:active {
   background-color: #00cf1c;
   border: 1px solid #00cf1c;
+}
+.btn-artist {
+  margin-bottom: 10px;
+  width: 100%;
 }

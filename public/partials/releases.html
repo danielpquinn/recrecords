@@ -1,9 +1,9 @@
 <div header></div>
 <div class="container main">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-9 col-xs-12">
       <div class="row">
-        <div class="col-sm-4 col-release" ng-repeat="release in releases.releases">
+        <div class="col-md-4 col-xs-6 col-release" ng-repeat="release in releases.releases">
           <div class="release-thumbnail module">
             <a class="artwork" href="/release/{{release.slug}}"><img ng-src="{{release.image}}"/></a>
             <p>{{release.artist.name}}</p>
@@ -21,8 +21,9 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <div ng-include="'/partials/artists.html'"></div>
+    <div class="col-md-3 col-xs-12">
+      <div ng-if="mobile===true" ng-include="'/partials/artists-mobile.html'"></div>
+      <div ng-if="mobile===false" ng-include="'/partials/artists.html'"></div>
     </div>
   </div>
 </div>

@@ -7,7 +7,13 @@ var _ = require('underscore'),
  */
 exports.initLocals = function (req, res, next) {
 
-  var locals = res.locals;
+  var locals = res.locals,
+    ua = req.header('user-agent');
+  if(/mobile/i.test(ua)) {
+    locals.mobile = true;
+  } else {
+    locals.mobile = false;
+  }
   locals.user = req.user;
   locals.env = process.env.NODE_ENV;
   next();
