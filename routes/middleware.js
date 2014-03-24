@@ -12,7 +12,7 @@ exports.initLocals = function (req, res, next) {
   if(/mobile/i.test(ua)) {
     locals.mobile = true;
   } else {
-    locals.mobile = true;
+    locals.mobile = false;
   }
   locals.user = req.user;
   locals.env = process.env.NODE_ENV;
