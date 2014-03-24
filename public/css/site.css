@@ -23,6 +23,9 @@ a:active {
   background-color: white;
   border-bottom: 1px solid #e1e1e1;
 }
+.col-release:nth-child(3n+1) {
+  clear: left;
+}
 .release-thumbnail {
   margin-bottom: 30px;
 }

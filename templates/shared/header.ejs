@@ -9,4 +9,4 @@
       var MOBILE = <%=mobile%>;
     </script>
   </head>
-  <body>
+  <body <% if (mobile) { %> class="mobile" <% } else { %> class="desktop" <% } %> >
