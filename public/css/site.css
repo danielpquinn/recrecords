@@ -15,8 +15,11 @@ a:active {
 .global-header.navbar-inverse a.navbar-brand {
   color: #008312;
 }
-.main {
+.desktop .main {
   margin-top: 100px;
+}
+.mobile .main {
+  margin-top: 70px;
 }
 .module {
   padding: 15px;
@@ -40,6 +43,9 @@ a:active {
 }
 .release-thumbnail .release-title {
   margin-top: 0;
+}
+.mobile .artwork {
+  margin-bottom: 10px;
 }
 .player .position {
   margin: 0;
