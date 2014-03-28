@@ -14,4 +14,4 @@ node_modules
 public/bower_components
 
 # Music and images
-public/releases
+public/media
