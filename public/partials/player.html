@@ -22,7 +22,7 @@
   <div class="panel-body">
     <table class="table table-condensed table-hover">
       <tr ng-repeat="track in tracks" class="track" ng-class="{active: $index==selectedTrack}" ng-click="play($index)">
-        <td width="35" class="text-right text-muted">{{$index + 1}}</td><td>{{track.title}}</td>
+        <td width="35" class="text-right text-muted">{{$index + 1}}</td><td>{{track.title}}</td><td class="text-right"><a href="{{track.url}}" target="_blank" ng-click="$event.stopPropagation();"><small><span class="glyphicon glyphicon-share" title="download"></span> mp3</a></small></td>
       </tr>
     </table>
   </div>

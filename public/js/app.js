@@ -1,6 +1,7 @@
 'use strict';
 
 angular.element(document).ready(function () {
+  soundManager.us
 
   angular.module('recrecords', [
     'ngAnimate',

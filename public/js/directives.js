@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('recrecords.directives', [])
-  .directive('player', function () {
+  .directive('player', function ($rootScope) {
     return {
       restrict: 'A',
       templateUrl: '/partials/player.html',
