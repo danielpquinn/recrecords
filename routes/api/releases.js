@@ -2,7 +2,7 @@ var keystone = require('keystone');
 
 exports = module.exports = function (req, res) {
   var page = parseInt(req.params.page) || 1,
-    perPage = 9;
+    perPage = parseInt(req.params.perPage) || 9;
 
   keystone.list('Release').model
     .find()
