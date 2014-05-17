@@ -25,10 +25,10 @@
     "url": "https://github.com/danielpquinn/recrecords/issues"
   },
   "dependencies": {
-    "keystone": "~0.1.55",
     "underscore": "~1.5.2",
     "ejs": "~0.8.8",
-    "gulp": "~3.5.6"
+    "gulp": "~3.5.6",
+    "keystone": "~0.2.16"
   },
   "devDependencies": {
     "gulp": "~3.5.6",
